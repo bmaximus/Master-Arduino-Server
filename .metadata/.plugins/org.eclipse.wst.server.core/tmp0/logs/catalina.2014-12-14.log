@@ -1,0 +1,40 @@
+??? 14, 2014 4:30:06 ?? org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;;.
+??? 14, 2014 4:30:12 ?? org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-127.0.0.1-8080"]
+??? 14, 2014 4:30:12 ?? org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+??? 14, 2014 4:30:12 ?? org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 8843 ms
+??? 14, 2014 4:30:12 ?? org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+??? 14, 2014 4:30:12 ?? org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.55
+??? 14, 2014 4:30:13 ?? org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\webapps\docs
+??? 14, 2014 4:30:17 ?? org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [952] milliseconds.
+??? 14, 2014 4:30:18 ?? org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\webapps\docs has finished in 5,007 ms
+??? 14, 2014 4:30:18 ?? org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\webapps\examples
+??? 14, 2014 4:30:22 ?? org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\webapps\examples has finished in 3,948 ms
+??? 14, 2014 4:30:22 ?? org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\webapps\host-manager
+??? 14, 2014 4:30:22 ?? org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\webapps\host-manager has finished in 452 ms
+??? 14, 2014 4:30:22 ?? org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\webapps\manager
+??? 14, 2014 4:30:23 ?? org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\webapps\manager has finished in 343 ms
+??? 14, 2014 4:30:23 ?? org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\webapps\ROOT
+??? 14, 2014 4:30:23 ?? org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0_ArduinoServer\webapps\ROOT has finished in 218 ms
+??? 14, 2014 4:30:23 ?? org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-127.0.0.1-8080"]
+??? 14, 2014 4:30:23 ?? org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+??? 14, 2014 4:30:23 ?? org.apache.catalina.startup.Catalina start
+INFO: Server startup in 11026 ms

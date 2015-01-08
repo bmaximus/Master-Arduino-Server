@@ -1,0 +1,19 @@
+package gr.uom.it11103.arduino.rest;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
+
+@Path("/setvaluesfromarduino")
+public class SetValuesFromArduino
+{
+	@GET
+	@Path("{param1}/{param2}/{param3}")
+	public int getUserHistory(
+			@PathParam("param1") int year,
+			@PathParam("param2") int month, 
+			@PathParam("param3") int day){
+		return 1;
+	}
+	
+}
+  

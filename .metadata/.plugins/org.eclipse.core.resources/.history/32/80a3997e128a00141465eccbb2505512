@@ -1,0 +1,25 @@
+package gr.uom.it11103.arduino.rest;
+
+public class ServiceControler
+{
+	
+	public int ArduinoToAndroid(int movement, int light, boolean magnet)
+	{
+		
+		boolean moved = false;
+		boolean lighted = false;
+		
+		if(movement > 0) { moved = true;}  //H KAPOIA STATHERA POU THA ORISW GIA KINISI
+		if(light > 0) { lighted = true;}  //H KAPOIA STATHERA POU THA ORISW GIA FWS
+		
+		if(moved)
+		{
+			return 1;
+		}
+ 		
+		//some send process
+		return 0 ;
+	}
+	
+
+}

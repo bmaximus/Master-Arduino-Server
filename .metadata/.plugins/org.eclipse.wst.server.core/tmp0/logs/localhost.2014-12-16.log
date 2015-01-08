@@ -1,0 +1,4 @@
+??? 16, 2014 8:51:30 ?? org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+??? 16, 2014 8:51:30 ?? org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()

@@ -1,0 +1,16 @@
+package gr.uom.it11103.arduino.rest;
+
+public class ServiceControler
+{
+	
+	public int InitializeArduinoStatus(int movement, int light, boolean magnet)
+	{
+		
+		
+		
+		
+		return 1;
+	}
+	
+
+}

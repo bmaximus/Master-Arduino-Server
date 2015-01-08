@@ -1,0 +1,43 @@
+[2014-09-07 09:49:27] [info]  [ 2456] Commons Daemon procrun (1.0.15.0 32-bit) started
+[2014-09-07 09:49:27] [info]  [ 2456] Service ArduinoServer name Apache Tomcat 7.0 ArduinoServer
+[2014-09-07 09:49:27] [info]  [ 2456] Service 'ArduinoServer' installed
+[2014-09-07 09:49:27] [info]  [ 2456] Commons Daemon procrun finished
+[2014-09-07 09:49:35] [info]  [ 2244] Commons Daemon procrun (1.0.15.0 32-bit) started
+[2014-09-07 09:49:35] [info]  [ 2244] Updating service...
+[2014-09-07 09:49:35] [info]  [ 2244] Service 'ArduinoServer' updated
+[2014-09-07 09:49:35] [info]  [ 2244] Update service finished.
+[2014-09-07 09:49:35] [info]  [ 2244] Commons Daemon procrun finished
+[2014-09-07 09:49:36] [info]  [  756] Commons Daemon procrun (1.0.15.0 32-bit) started
+[2014-09-07 09:49:36] [info]  [  756] Updating service...
+[2014-09-07 09:49:36] [info]  [  756] Service 'ArduinoServer' updated
+[2014-09-07 09:49:36] [info]  [  756] Update service finished.
+[2014-09-07 09:49:36] [info]  [  756] Commons Daemon procrun finished
+[2014-09-07 09:49:36] [info]  [ 1468] Commons Daemon procrun (1.0.15.0 32-bit) started
+[2014-09-07 09:49:36] [info]  [ 1468] Updating service...
+[2014-09-07 09:49:36] [info]  [ 1468] Service 'ArduinoServer' updated
+[2014-09-07 09:49:37] [info]  [ 1468] Update service finished.
+[2014-09-07 09:49:37] [info]  [ 1468] Commons Daemon procrun finished
+[2014-09-07 09:49:53] [info]  [ 1484] Commons Daemon procrun (1.0.15.0 32-bit) started
+[2014-09-07 09:49:53] [info]  [ 1484] Running 'ArduinoServer' Service...
+[2014-09-07 09:49:53] [info]  [  736] Starting service...
+[2014-09-07 09:49:55] [info]  [  736] Service started in 1768 ms.
+[2014-09-07 10:10:05] [info]  [  796] Stopping service...
+[2014-09-07 10:10:06] [info]  [  796] Service stop thread completed.
+[2014-09-07 10:10:07] [info]  [ 1484] Run service finished.
+[2014-09-07 10:10:07] [info]  [ 1484] Commons Daemon procrun finished
+[2014-09-07 10:10:37] [info]  [ 2712] Commons Daemon procrun (1.0.15.0 32-bit) started
+[2014-09-07 10:10:37] [info]  [ 2712] Running 'ArduinoServer' Service...
+[2014-09-07 10:10:38] [info]  [ 2200] Starting service...
+[2014-09-07 10:10:39] [info]  [ 2200] Service started in 1726 ms.
+[2014-09-07 11:19:46] [info]  [  204] Stopping service...
+[2014-09-07 11:19:47] [info]  [  204] Service stop thread completed.
+[2014-09-07 11:19:47] [info]  [ 2712] Run service finished.
+[2014-09-07 11:19:48] [info]  [ 2712] Commons Daemon procrun finished
+[2014-09-07 11:19:53] [info]  [ 4000] Commons Daemon procrun (1.0.15.0 32-bit) started
+[2014-09-07 11:19:54] [info]  [ 4000] Running 'ArduinoServer' Service...
+[2014-09-07 11:19:54] [info]  [ 3768] Starting service...
+[2014-09-07 11:19:55] [info]  [ 3768] Service started in 1747 ms.
+[2014-09-07 11:23:17] [info]  [ 3456] Stopping service...
+[2014-09-07 11:23:18] [info]  [ 3456] Service stop thread completed.
+[2014-09-07 11:23:18] [info]  [ 4000] Run service finished.
+[2014-09-07 11:23:18] [info]  [ 4000] Commons Daemon procrun finished

@@ -1,0 +1,30 @@
+??? 07, 2014 9:50:03 ?? org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+??? 07, 2014 9:50:03 ?? org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+??? 07, 2014 9:50:03 ?? org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: attributeAdded('org.apache.jasper.compiler.TldLocationsCache', 'org.apache.jasper.compiler.TldLocationsCache@3a4d82')
+??? 07, 2014 10:10:06 ?? org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+??? 07, 2014 10:10:06 ?? org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+??? 07, 2014 10:10:46 ?? org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+??? 07, 2014 10:10:46 ?? org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+??? 07, 2014 10:10:46 ?? org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: attributeAdded('org.apache.jasper.compiler.TldLocationsCache', 'org.apache.jasper.compiler.TldLocationsCache@db454')
+??? 07, 2014 11:19:47 ?? org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+??? 07, 2014 11:19:47 ?? org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+??? 07, 2014 11:20:02 ?? org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+??? 07, 2014 11:20:02 ?? org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+??? 07, 2014 11:20:02 ?? org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: attributeAdded('org.apache.jasper.compiler.TldLocationsCache', 'org.apache.jasper.compiler.TldLocationsCache@1167c80')
+??? 07, 2014 11:23:17 ?? org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+??? 07, 2014 11:23:17 ?? org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()

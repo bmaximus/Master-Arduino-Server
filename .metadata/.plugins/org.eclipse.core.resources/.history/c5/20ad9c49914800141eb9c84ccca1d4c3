@@ -1,0 +1,14 @@
+package gr.uom.it11103.arduino.rest;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
+@Path("/test")
+public class Test {
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String test(){
+		return "Hello World!!";
+	}
+}

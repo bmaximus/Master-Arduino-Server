@@ -1,0 +1,9 @@
+[2014-09-30 22:49:55] [info]  [ 1160] Commons Daemon procrun (1.0.15.0 32-bit) started
+[2014-09-30 22:49:56] [info]  [ 1160] Running 'ArduinoServer' Service...
+[2014-09-30 22:49:56] [info]  [ 1252] Starting service...
+[2014-09-30 22:50:06] [info]  [ 1252] Service started in 9858 ms.
+[2014-10-16 04:01:30] [info]  [ 2624] Console SHUTDOWN event signaled
+[2014-10-16 04:01:30] [info]  [ 2624] Stopping service...
+[2014-10-16 04:01:31] [info]  [ 2624] Service stop thread completed.
+[2014-10-16 04:01:31] [info]  [ 1160] Run service finished.
+[2014-10-16 04:01:31] [info]  [ 1160] Commons Daemon procrun finished

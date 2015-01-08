@@ -1,0 +1,64 @@
+??? 03, 2014 1:30:39 ?? org.apache.catalina.core.StandardServer await
+WARNING: StandardServer.await: read: 
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:485)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:777)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:723)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:321)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:455)
+
+??? 03, 2014 1:30:39 ?? org.apache.catalina.core.StandardServer await
+WARNING: StandardServer.await: Invalid command '' received
+??? 03, 2014 1:30:39 ?? org.apache.catalina.core.StandardServer await
+WARNING: StandardServer.await: Invalid command 'GET / HTTP/1.1' received
+??? 03, 2014 1:30:40 ?? org.apache.catalina.core.StandardServer await
+WARNING: StandardServer.await: Invalid command 'GET / HTTP/1.1' received
+??? 03, 2014 1:30:44 ?? org.apache.coyote.ajp.AjpMessage processHeader
+SEVERE: Invalid message received with signature 18245
+??? 03, 2014 1:30:44 ?? org.apache.coyote.ajp.AjpMessage processHeader
+SEVERE: Invalid message received with signature 18245
+??? 03, 2014 1:30:44 ?? org.apache.coyote.ajp.AjpMessage processHeader
+SEVERE: Invalid message received with signature 18245
+??? 03, 2014 1:30:48 ?? org.apache.coyote.ajp.AjpMessage processHeader
+SEVERE: Invalid message received with signature 18245
+??? 03, 2014 1:30:48 ?? org.apache.coyote.ajp.AjpMessage processHeader
+SEVERE: Invalid message received with signature 18245
+??? 03, 2014 1:30:48 ?? org.apache.coyote.ajp.AjpMessage processHeader
+SEVERE: Invalid message received with signature 18245
+??? 03, 2014 1:30:50 ?? org.apache.catalina.core.StandardServer await
+WARNING: StandardServer.await: read: 
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:485)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:777)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:723)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:321)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:455)
+
+??? 03, 2014 1:30:50 ?? org.apache.catalina.core.StandardServer await
+WARNING: StandardServer.await: Invalid command '' received
+??? 03, 2014 1:36:54 ?? org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+??? 03, 2014 1:36:54 ?? org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+??? 03, 2014 1:36:54 ?? org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+??? 03, 2014 1:36:54 ?? org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+??? 03, 2014 1:36:54 ?? org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]

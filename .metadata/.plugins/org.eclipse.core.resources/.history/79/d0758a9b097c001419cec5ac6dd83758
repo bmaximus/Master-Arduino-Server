@@ -1,0 +1,5 @@
+package gr.uom.it11103.arduino.rest;
+
+public class ServiceControler {
+
+}
