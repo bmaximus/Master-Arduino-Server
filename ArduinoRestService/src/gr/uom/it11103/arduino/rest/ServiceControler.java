@@ -1,26 +1,21 @@
 package gr.uom.it11103.arduino.rest;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.Serializable;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
-import sun.reflect.ReflectionFactory.GetReflectionFactoryAction;
 
 
 
@@ -42,8 +37,7 @@ public class ServiceControler
 	{
 		
 		boolean moved = false;
-		boolean lighted = false;
-		String apiKey1 = "AIzaSyA2wmKgCJ0O8isSoHzkq8OBg7M71MwOXJQ";
+		boolean lighted = false;		
 		String apiKey = "AIzaSyAtaT4JBpddxCSm6Qp0_Gv1WICVCw0F8GE";   //this is the new one
 		
 		String registrationId = getREGISTRATIONID();
@@ -53,11 +47,9 @@ public class ServiceControler
 		
 		if(moved)
 		{
-			System.out.println("\n  "+ apiKey);		
+			//System.out.println("\n  "+ apiKey);		
 		POST2GCM post2gcm = new POST2GCM();
-	
-		
-		post2gcm.post(apiKey, null);
+	    post2gcm.post(apiKey, null);
 			return 1;
 		}
  		
@@ -102,45 +94,38 @@ public class POST2GCM {
 	
 	 public void post(String apiKey, Content content)
 	 {
-
+		 
+		 
 	        try{
 
 	        // 1. URL
-	     //   URL url = new URL("https://android.googleapis.com/gcm/send");
-	        	 URL url = new URL("https://android.clients.google.com/c2dm/send");
-	      
-	      //  HttpURLConnection conn = (HttpURLConnection) url.openConnection();       
-	     //   conn.setRequestMethod("POST");	     
-	     //   conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");// "application/json");
-	      //  conn.setRequestProperty("Authorization", "key="+apiKey);
-	      //  conn.setDoOutput(true);
-	        
-	        	 
+	        URL url = new URL("https://android.googleapis.com/gcm/send");
+	        	// URL url = new URL("https://android.clients.google.com/c2dm/send");
+	   
+	       	 
 	        	 
 	        	    StringBuilder postDataBuilder = new StringBuilder();
 	        	    postDataBuilder.append("registration_id").append("=")
-	        	        .append(getREGISTRATIONID());
-	        	    postDataBuilder.append("&").append("collapse_key").append("=")
-	        	        .append("0");
-	        	    postDataBuilder.append("&").append("data.payload").append("=")
-	        	        .append(URLEncoder.encode("MAXIMUSSSSSSSSSSSSS",  "UTF-8"));	        	  
+	        	        .append(getREGISTRATIONID());	        	
+	        	    postDataBuilder.append("&").append("data.price").append("=")
+	        	        .append(URLEncoder.encode("Auto to minima to ftiaxtike apo ton pio gamato programmatisti kinitwn siskevwn ton teleutiwn etwn. "
+	        	        		+ "Seuxaristw Thee mou. NAI, katafera na steilw minima sto kinito mou!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	        	        		+ "ELENI SAGAPAW, EISAI TO MWRO MOU!!!!!!<3 <3 <3 <3",  "UTF-8"));	        	  
 			        byte[] postData = postDataBuilder.toString().getBytes("UTF-8");
 			        
-			        
-			        
-	        	    
-	        	    HttpsURLConnection
-	        	        .setDefaultHostnameVerifier(new CustomizedHostnameVerifier());
+			        	        	    
+	        	    HttpsURLConnection.setDefaultHostnameVerifier(new CustomizedHostnameVerifier());
 	        	    HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
 	        	    conn.setDoOutput(true);
 	        	    conn.setUseCaches(false);
 	        	    conn.setRequestMethod("POST");
-	        	    conn.setRequestProperty("Content-Type",
-	        	        "application/x-www-form-urlencoded;charset=UTF-8");
-	        	    conn.setRequestProperty("Content-Length",
-	        	        Integer.toString(postData.length));
-	        	    conn.setRequestProperty("Authorization", "GoogleLogin auth="
-	        	        + getApiKey());
+	        	    conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+	        	  //  conn.setRequestProperty("Content-Length",   Integer.toString(postData.length));
+	        	    conn.setRequestProperty("Authorization", "key="+getApiKey());
+	        	           	    
+	        	         	 
+	        	    
+	        	    
 
 	        	    OutputStream out = conn.getOutputStream();
 	        	    out.write(postData);
@@ -152,11 +137,11 @@ public class POST2GCM {
 	        	    System.out.println("\nSending 'POST' request to apikey  : " + getApiKey());
 	        	    System.out.println("\nSending 'POST' request to regID : " + getREGISTRATIONID());
 		            System.out.println("Response Code : " + responseCode);
+		            String str = new String(postData, "UTF-8");
+		            System.out.println("Post : " + str);
 	        	 
 	        	 
-	        	 
-	        	 
-	        	 
+	        	    	 
 	        	 
 	   /*    
 	        StringBuilder postDataBuilder = new StringBuilder();
