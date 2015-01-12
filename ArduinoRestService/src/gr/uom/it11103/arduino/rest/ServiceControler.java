@@ -67,7 +67,7 @@ public class ServiceControler
 			return 4;
 		} else if(moved && !lighted && !magneted)        //1.0.0
 		{
-			post2gcm.post(apiKey, "This is a test Message from user. Your Movement Sensor found some suspicious movement. Please check it.");
+			post2gcm.post(apiKey, "This is a message from Arduino, Your Movement Sensor found some suspicious movement. Please check it.");
 			return 5;
 		} else if(moved && !lighted && magneted)         //1.0.1
 		{
