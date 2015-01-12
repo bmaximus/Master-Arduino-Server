@@ -29,31 +29,61 @@ public class ServiceControler
 		return ApiKey;
 	}
 
-	public static void setApiKey(String apiKey) {
+	public static void setApiKey(String apiKey) 
+	{
 		ApiKey = apiKey;
 	}
 
-	public int ArduinoToAndroid(int movement, int light, boolean magnet)
+	public int ArduinoToAndroid(int movement, int light, int magnet)
 	{
 		
 		boolean moved = false;
-		boolean lighted = false;		
+		boolean lighted = false;
+		boolean magneted = false;
 		String apiKey = "AIzaSyAtaT4JBpddxCSm6Qp0_Gv1WICVCw0F8GE";   //this is the new one
 		
 		String registrationId = getREGISTRATIONID();
 		
 		if(movement > 0) { moved = true;}  //H KAPOIA STATHERA POU THA ORISW GIA KINISI
 		if(light > 0) { lighted = true;}  //H KAPOIA STATHERA POU THA ORISW GIA FWS
-		
-		if(moved)
-		{
-			//System.out.println("\n  "+ apiKey);		
+		if(magnet > 0) { magneted = true;}  //H KAPOIA STATHERA POU THA ORISW GIA FWS
 		POST2GCM post2gcm = new POST2GCM();
-	    post2gcm.post(apiKey, null);
+	   
+		if(!moved && !lighted && !magneted)      //0.0.0
+		{
+			post2gcm.post(apiKey, "This is a test Message from user. There should not be 0/0/0");
 			return 1;
+		} else if(!moved && !lighted && magneted)       //0.0.1
+		{
+			post2gcm.post(apiKey, "This is a message from Arduino, Your Magnetic Switch was interrupted. Please check it.");
+			return 2;
+		} else if(!moved && lighted && !magneted)       //0.1.0
+		{
+			post2gcm.post(apiKey, "This is a message from Arduino, Your Light Sensor recorded some Light. Please check it.");
+			return 3;
+		} else if(!moved && !lighted && !magneted)       //0.1.1
+		{ 
+			post2gcm.post(apiKey, "This is a message from Arduino, Your Light Sensor and Magnetic Switch were recorded some activity. Please check it.");
+			return 4;
+		} else if(moved && !lighted && !magneted)        //1.0.0
+		{
+			post2gcm.post(apiKey, "This is a test Message from user. Your Movement Sensor found some suspicious movement. Please check it.");
+			return 5;
+		} else if(moved && !lighted && magneted)         //1.0.1
+		{
+			post2gcm.post(apiKey, "This is a message from Arduino, Your Magnetic Switch and Movement Sensor were interrupted. Please check it.");
+			return 6;
+		} else if(moved && lighted && !magneted)         //1.1.0
+		{
+			post2gcm.post(apiKey, "This is a message from Arduino, Your Light Sensor and Movement Seonsor were interrupted. Please check it.");
+			return 7;
+		} else if(moved && lighted && magneted)          //1.1.1
+		{ 
+			post2gcm.post(apiKey, "This is a message from Arduino, Your Light Sensor and Magnetic Switch were recorded some activity. Please check it.");
+			return 8;
 		}
- 		
-		//some send process
+			
+		
 		return 0 ;
 	}
 	
@@ -92,7 +122,7 @@ public class ServiceControler
 public class POST2GCM {
 
 	
-	 public void post(String apiKey, Content content)
+	 public void post(String apiKey, String  messageFromSender)
 	 {
 		 
 		 
@@ -108,9 +138,7 @@ public class POST2GCM {
 	        	    postDataBuilder.append("registration_id").append("=")
 	        	        .append(getREGISTRATIONID());	        	
 	        	    postDataBuilder.append("&").append("data.price").append("=")
-	        	        .append(URLEncoder.encode("Auto to minima to ftiaxtike apo ton pio gamato programmatisti kinitwn siskevwn ton teleutiwn etwn. "
-	        	        		+ "Seuxaristw Thee mou. NAI, katafera na steilw minima sto kinito mou!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	        	        		+ "ELENI SAGAPAW, EISAI TO MWRO MOU!!!!!!<3 <3 <3 <3",  "UTF-8"));	        	  
+	        	        .append(URLEncoder.encode(messageFromSender,  "UTF-8"));	        	  
 			        byte[] postData = postDataBuilder.toString().getBytes("UTF-8");
 			        
 			        	        	    

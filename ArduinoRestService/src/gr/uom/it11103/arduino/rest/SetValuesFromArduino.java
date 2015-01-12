@@ -11,7 +11,7 @@ public class SetValuesFromArduino
 	public int getUserHistory(
 			@PathParam("param1") int movement,
 			@PathParam("param2") int light, 
-			@PathParam("param3") boolean magnet){
+			@PathParam("param3") int magnet){
 		
 		ServiceControler sc = new ServiceControler();
 	   int sendingVerificaton =  sc.ArduinoToAndroid(movement, light, magnet);
