@@ -14,8 +14,7 @@ public class SetValuesFromArduino
 			@PathParam("param3") int magnet){
 		
 		ServiceControler sc = new ServiceControler();
-	   int sendingVerificaton =  sc.ArduinoToAndroid(movement, light, magnet);
-		
+	    int sendingVerificaton =  sc.ArduinoToAndroid(movement, light, magnet);
 		return sendingVerificaton;
 	}
 	

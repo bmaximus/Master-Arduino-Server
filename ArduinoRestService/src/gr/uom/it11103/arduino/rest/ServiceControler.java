@@ -28,12 +28,12 @@ public class ServiceControler
 	public static String getApiKey() {
 		return ApiKey;
 	}
-
+	
 	public static void setApiKey(String apiKey) 
 	{
 		ApiKey = apiKey;
 	}
-
+	
 	public int ArduinoToAndroid(int movement, int light, int magnet)
 	{
 		
@@ -51,35 +51,51 @@ public class ServiceControler
 	   
 		if(!moved && !lighted && !magneted)      //0.0.0
 		{
-			post2gcm.post(apiKey, "This is a test Message from user. There should not be 0/0/0");
+			post2gcm.post(apiKey, "This is a test Message from user. "
+								+ "There should not be 0/0/0");
 			return 1;
 		} else if(!moved && !lighted && magneted)       //0.0.1
 		{
-			post2gcm.post(apiKey, "This is a message from Arduino, Your Magnetic Switch was interrupted. Please check it.");
+			post2gcm.post(apiKey, "This is a message from Arduino, "
+								+ "Your Magnetic Switch was interrupted. "
+								+ "Please check it.");
 			return 2;
 		} else if(!moved && lighted && !magneted)       //0.1.0
 		{
-			post2gcm.post(apiKey, "This is a message from Arduino, Your Light Sensor recorded some Light. Please check it.");
+			post2gcm.post(apiKey, "This is a message from Arduino, "
+								+ "Your Light Sensor recorded some Light. "
+								+ "Please check it.");
 			return 3;
 		} else if(!moved && !lighted && !magneted)       //0.1.1
 		{ 
-			post2gcm.post(apiKey, "This is a message from Arduino, Your Light Sensor and Magnetic Switch were recorded some activity. Please check it.");
+			post2gcm.post(apiKey, "This is a message from Arduino, "
+								+ "Your Light Sensor and Magnetic Switch "
+								+ "were recorded some activity. "
+								+ "Please check it.");
 			return 4;
 		} else if(moved && !lighted && !magneted)        //1.0.0
 		{
-			post2gcm.post(apiKey, "This is a message from Arduino, Your Movement Sensor found some suspicious movement. Please check it.");
+			post2gcm.post(apiKey, "This is a message from Arduino, "
+								+ "Your Movement Sensor found some "
+								+ "suspicious movement. Please check it.");
 			return 5;
 		} else if(moved && !lighted && magneted)         //1.0.1
 		{
-			post2gcm.post(apiKey, "This is a message from Arduino, Your Magnetic Switch and Movement Sensor were interrupted. Please check it.");
+			post2gcm.post(apiKey, "This is a message from Arduino, "
+								+ "Your Magnetic Switch and Movement Sensor "
+								+ "were interrupted. Please check it.");
 			return 6;
 		} else if(moved && lighted && !magneted)         //1.1.0
 		{
-			post2gcm.post(apiKey, "This is a message from Arduino, Your Light Sensor and Movement Seonsor were interrupted. Please check it.");
+			post2gcm.post(apiKey, "This is a message from Arduino, "
+								+ "Your Light Sensor and Movement Seonsor "
+								+ "were interrupted. Please check it.");
 			return 7;
 		} else if(moved && lighted && magneted)          //1.1.1
 		{ 
-			post2gcm.post(apiKey, "This is a message from Arduino, Your Light Sensor and Magnetic Switch were recorded some activity. Please check it.");
+			post2gcm.post(apiKey, "This is a message from Arduino, "
+								+ "Your Light Sensor and Magnetic Switch "
+								+ "were recorded some activity. Please check it.");
 			return 8;
 		}
 			
@@ -90,11 +106,10 @@ public class ServiceControler
 	public static String getREGISTRATIONID() {
 		return REGISTRATIONID;
 	}
+	
 	public void setREGISTRATIONID(String rEGISTRATIONID) {
 		REGISTRATIONID = rEGISTRATIONID;
 	}
-	
-
 	
 	public String RegistrationIdToTempFile(String regId){
 		setREGISTRATIONID(regId);
@@ -112,49 +127,33 @@ public class ServiceControler
 		} catch(Exception e){
 		    e.printStackTrace();
 		} 
-		
-		
 		return message;
 		
 	}
-
-
-public class POST2GCM {
-
 	
-	 public void post(String apiKey, String  messageFromSender)
-	 {
+	public class POST2GCM {
+		public void post(String apiKey, String  messageFromSender)
+		{
 		 
-		 
-	        try{
-
-	        // 1. URL
-	        URL url = new URL("https://android.googleapis.com/gcm/send");
-	        	// URL url = new URL("https://android.clients.google.com/c2dm/send");
-	   
+		  try{
+      
+	        URL url = new URL("https://android.googleapis.com/gcm/send");        	  
 	       	 
-	        	 
-	        	    StringBuilder postDataBuilder = new StringBuilder();
+	        	   	StringBuilder postDataBuilder = new StringBuilder();
 	        	    postDataBuilder.append("registration_id").append("=")
 	        	        .append(getREGISTRATIONID());	        	
 	        	    postDataBuilder.append("&").append("data.price").append("=")
 	        	        .append(URLEncoder.encode(messageFromSender,  "UTF-8"));	        	  
 			        byte[] postData = postDataBuilder.toString().getBytes("UTF-8");
-			        
-			        	        	    
+			           
 	        	    HttpsURLConnection.setDefaultHostnameVerifier(new CustomizedHostnameVerifier());
 	        	    HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
 	        	    conn.setDoOutput(true);
 	        	    conn.setUseCaches(false);
 	        	    conn.setRequestMethod("POST");
-	        	    conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
-	        	  //  conn.setRequestProperty("Content-Length",   Integer.toString(postData.length));
+	        	    conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");	        	
 	        	    conn.setRequestProperty("Authorization", "key="+getApiKey());
-	        	           	    
-	        	         	 
-	        	    
-	        	    
-
+	        	       
 	        	    OutputStream out = conn.getOutputStream();
 	        	    out.write(postData);
 	        	    out.close();
@@ -166,51 +165,8 @@ public class POST2GCM {
 	        	    System.out.println("\nSending 'POST' request to regID : " + getREGISTRATIONID());
 		            System.out.println("Response Code : " + responseCode);
 		            String str = new String(postData, "UTF-8");
-		            System.out.println("Post : " + str);
-	        	 
-	        	 
-	        	    	 
-	        	 
-	   /*    
-	        StringBuilder postDataBuilder = new StringBuilder();
-	        postDataBuilder.append("registration_id").append("=")
-	            .append(getREGISTRATIONID());
-	        postDataBuilder.append("&").append("collapse_key").append("=")
-	            .append("0");
-	        postDataBuilder.append("&").append("key").append("=")
-            .append(getApiKey());
-	        postDataBuilder.append("&").append("data.payload").append("=")
-	            .append(URLEncoder.encode("MAXIM TESTT", "UTF-8"));
+		            System.out.println("Post : " + str);	        	 
 
-	        byte[] postData = postDataBuilder.toString().getBytes("UTF-8");
-	        	       
-	        HttpsURLConnection.setDefaultHostnameVerifier(new CustomizedHostnameVerifier());
-	        HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-	        conn.setDoOutput(true);
-	        conn.setUseCaches(false);
-	        conn.setRequestMethod("POST");
-	        conn.setRequestProperty("Content-Type",
-	            "application/x-www-form-urlencoded;charset=UTF-8");
-	        conn.setRequestProperty("Content-Length",
-	            Integer.toString(postData.length));
-	        conn.setRequestProperty("Authorization", "key="
-	            + getApiKey());
-	              DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
-	            wr.flush();
-
-	            wr.close();     
-	            int responseCode = conn.getResponseCode();
-	            System.out.println("\nSending 'POST' request to URL : " + url);
-	            System.out.println("Response Code : " + responseCode);
-	            BufferedReader in = new BufferedReader( new InputStreamReader(conn.getInputStream()));
-	            String inputLine;
-	            StringBuffer response = new StringBuffer();
-	            while ((inputLine = in.readLine()) != null) {
-	                response.append(inputLine);
-	            }
-	            in.close();
-	            System.out.println(response.toString());
-*/
 	            } catch (MalformedURLException e) {
 	                e.printStackTrace();
 	            } catch (IOException e) {
@@ -218,22 +174,12 @@ public class POST2GCM {
 	            } 
 	        }
 	 
-}
-
-
-public static Content createContent(){
-
-	Content c= new Content();
-    c.addRegId(getREGISTRATIONID());
-    c.createData("Test Title","Test Message" );
-    
-    return c;
-}
-private static class CustomizedHostnameVerifier implements HostnameVerifier {
-    public boolean verify(String hostname, SSLSession session) {
-      return true;
     }
 
-
-}
+	
+	private static class CustomizedHostnameVerifier implements HostnameVerifier {
+		public boolean verify(String hostname, SSLSession session) {
+      return true;
+    }
+	}
 }

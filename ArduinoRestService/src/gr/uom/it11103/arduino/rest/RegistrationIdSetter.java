@@ -10,9 +10,8 @@ public class RegistrationIdSetter {
 	public String StoreRegistrationId(
 			@PathParam("param1") String regId)
 		{
-		
 		ServiceControler sc = new ServiceControler();
-	 String message =   sc.RegistrationIdToTempFile(regId);
+	    String message =   sc.RegistrationIdToTempFile(regId);
 		return message;
 		
 	}
